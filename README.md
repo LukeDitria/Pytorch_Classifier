@@ -20,6 +20,14 @@ Good start for most things, this will create a ResNet50 model using the high-per
 python train.py -mn resnet50_pretrained --dataset_root #path to dataset root# --model_type resnet50 --model_parameters IMAGENET1K_V2 --image_size 256
 ```
 
+<br>
+<b> Starting from an existing checkpoint: </b><br>
+The code will attempt to load a checkpoint with the name provided in the "save_dir" specified.
+
+```
+python train.py -mn test_run --load_checkpoint --dataset_root #path to dataset root#
+```
+
 ## Dataset
 Training code uses the ImageFolder Pytorch Dataset and data should be organised as described in the docs. <br>
 Training code assumes at least a train/test split has been defined, dataset_root parameter should point to the top level directory. <br>
@@ -54,6 +62,7 @@ Folder structure should look something like the following <br>
 ```
 ## To Do - requests welcome!
 - Add additional dataloader for CSV type datasets
+- Create model from checkpoint parameters
 - Add dataset analysis
 - Add learning rate decay
 - Add additional loss function options
